@@ -1,0 +1,325 @@
+.app {
+    display: flex;
+    height: 100vh;
+    margin: -17px; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+}
+
+/* Remove .container styles if not used */
+
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sidebar {
+    position: relative;
+    width: 110%;
+    height: 100vh; /* Set height to 100% of the viewport height */
+    background-color: #f3f5f7;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    border-right: 1.5px solid #f3f5f7;
+    transform-origin: left;
+}
+
+.sidebar.closed {
+    transform: scaleX(0); /* Scale down horizontally */
+    transform-origin: left; /* Set transform origin to the left edge */
+}
+
+
+.dashboard {
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.dashboard.full-width {
+    width: calc(100% - 250px); /* Adjust width based on sidebar width */
+    margin-left: 50px; /* Adjust margin to leave space for the sidebar */
+}
+
+.dashboard.shift-right {
+    transform: translateX(250px); /* Adjust the value based on the width of your sidebar */
+}
+
+
+
+.toggle-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    /* No need to specify right here */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.toggle-button i {
+    color: #333;
+    font-size: 20px;
+}
+
+.new-folder-button {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+
+.new-folder-button:hover {
+    background-color: #0056b3;
+    /* Darker shade of blue on hover */
+}
+
+.close-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    background-color: #f3f5f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+.search-bar {
+    padding: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    
+    /* Position relative for absolute positioning of the line */
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.folder-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.folder-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 2px;
+    /* Adjust margin as needed */
+    margin-bottom: 5px;
+    /* Adjust margin as needed */
+}
+
+.folder-list li {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;   
+    /* Add transition property */
+}
+
+.folder-list li:hover {
+    background-color: #e6e9ef;
+    /* Change background color on hover */
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    width: 300px;
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.modal input[type="text"] {
+    width: 100%;
+    padding: 10px 3px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+
+.create-button,
+.cancel-button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-button {
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.create-button:hover {
+    background-color: #0056b3;
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: #000;
+}
+
+.cancel-button:hover {
+    background-color: #b3b3b3;
+}
+
+.button-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.button-container2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.text-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-group .text-field.content {
+    height: 100px;
+    /* Adjust the height as needed */
+    /* Add any additional styles as needed */
+}
+
+.select-folder-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* Add any additional styles as needed */
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin: 20px;
+  }
+  
+  .button-container button:first-child {
+    background-color: #deecfe;
+    border: 1px solid #4188f7;
+    color: black;
+  }
+  
+  .button-container button:first-child:hover {
+    background-color: #dbeafe;
+  }
+  
+  .button-container button:last-child { 
+    background-color: #faf5ff;
+    border: 1px solid #c084fc; /* Green border color */
+    color: black;
+  }
+  
+  .button-container button:last-child:hover {
+    background-color: #f3e8ff;
+  }

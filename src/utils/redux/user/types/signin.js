@@ -1,0 +1,5 @@
+export default {
+    SIGNIN_START : "SIGNIN_START",
+    SIGNIN_SUCCESS : "SIGNIN_SUCCESS",
+    SIGNIN_ERROR : "SIGNIN_ERROR"
+}

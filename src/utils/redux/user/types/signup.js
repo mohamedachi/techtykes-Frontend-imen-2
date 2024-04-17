@@ -1,0 +1,5 @@
+export default {
+    SIGNUP_START : "SIGNUP_START",
+    SIGNUP_SUCCESS : "SIGNUP_SUCCESS",
+    SIGNUP_ERROR : "SIGNUP_ERROR"
+}
